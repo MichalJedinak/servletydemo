@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Form simple serlvet page</title>
+</head>
+<body>
+      <h2>Post request simpleservlet</h2>
+      <div style="align-items: flex-start; font-family: system-ui;font-size: medium;color: darkturquoise;">
+            <form action="simpleservlet" method="get">
+                  <label for="name" >Enter your name</label><br>
+                  <input id="name" type="text" name="name" placeholder="name"><br>
+                  <label for="surname" >Enter your surname</label><br>
+                  <input id="surname" type="text" name="surname" placeholder="surname"><br>
+                  <input id="page" type="hidden" name="page" value="form.html"><br>
+
+                  <p>Man :<input type="radio" name="genders" value="man"></p>
+                  <p>Woman :<input type="radio" name="genders" value="woman"></p>
+                  <select name="country" id="country-select">
+                        <option value="">---select your country---</option>
+                        <option value="sk">sk</option>
+                        <option value="cz">cz</option>
+                        <option value="en">en</option>
+                  </select>
+
+                  <select name="animals" id="animals-select"  multiple="multiple" size="4">
+                        <option value="">---select your favorit animals---</option>
+                        <option value="dog">dog</option>
+                        <option value="cat">cat</option>
+                        <option value="banny">banny</option>
+                        <option value="frog">frog</option>
+                        <option value="bird">bird</option>
+                  </select>
+                  <button type="submit" name="submit">Submit</button>
+            </form>
+      </div>
+</body>
+</html>

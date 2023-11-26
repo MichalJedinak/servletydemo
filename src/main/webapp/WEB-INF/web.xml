@@ -1,0 +1,21 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Servlety Demo</display-name>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- <servlet>
+    <servlet-name>simpleservletXML</servlet-name>
+    <servlet-class>sk.michaljedinak.servlety.SimpleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>simpleservletXML</servlet-name>
+    <url-pattern>simpleservletXML</url-pattern>
+    <url-pattern>simpleservletXML-2</url-pattern>
+  </servlet-mapping> -->
+</web-app>
