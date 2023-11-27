@@ -11,14 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet( urlPatterns =  { "/simpleservlet" , "/newservlet"} )
+@WebServlet( urlPatterns =  { "/simpleservlet" ,"/new"} )
 public class SimpleServlet extends  HttpServlet {
 
       @Override
       protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             String name = req.getParameter("name");
             String surname = req.getParameter("surname");
-            PrintWriter out = resp.getWriter();            
+            PrintWriter out = resp.getWriter();   
+            // req.setCharacterEncoding("UTF-8");
+            // resp.setCharacterEncoding("UTF-8");
+            // resp.setContentType("text/html;charset=UTF-8");         
             out.println("<!DOCTYPE html> <html><body>");
             out.print("<h2>Som v Simple Servlet </h2>");
             out.println("<br>");
@@ -62,6 +65,9 @@ public class SimpleServlet extends  HttpServlet {
           //  resp.sendRedirect(String.format("simplesrvlet?name=%s&page=%s",name ,page));
     
             PrintWriter out = resp.getWriter();
+            // req.setCharacterEncoding("UTF-8");
+            // resp.setCharacterEncoding("UTF-8");
+            // resp.setContentType("text/html;charset=UTF-8");
             out.println("<!DOCTYPE html> <html><body>");
             out.println("<br>");
             out.printf("name : %s",name);

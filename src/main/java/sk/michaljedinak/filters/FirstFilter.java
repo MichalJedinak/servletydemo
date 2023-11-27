@@ -1,6 +1,8 @@
 package sk.michaljedinak.filters;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -10,8 +12,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-@WebFilter(urlPatterns = {"/*"} , filterName = "FirstFilter name",
+@WebFilter(urlPatterns = {"/bola*alePotrebovaliSmePreUkazkuOdtavotFilter"} , filterName = "FirstFilter name",
             initParams = {@WebInitParam(name="Michal",value = "Michal Jedinak")})
 public class FirstFilter implements Filter{
 
@@ -27,11 +30,20 @@ public class FirstFilter implements Filter{
       public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
                   throws IOException, ServletException {
 
-            // PrintWriter out = response.getWriter();
+             PrintWriter out = response.getWriter();
             // out.println("Som vo Filtry jedna :)  a stránka teraz nefunguje ");
             HttpServletRequest req = (HttpServletRequest)request;
             req.getSession().setAttribute("filterAtribute","presiel som cez prvy filter : FirstFilter");
-            chain.doFilter(request, response);
+           // chain.doFilter(request, response);
+
+           HttpServletResponse resp =(HttpServletResponse) response;
+           //resp.sendRedirect("");
+          //req.getRequestDispatcher("").forward(request, response);
+          out.println("Som z Filtru ");
+          req.getRequestDispatcher("").include(req, resp);
+          return;
+         // out.println("Dovidenia nabudúce inde a a inak ");
+
       }    
 
       @Override
