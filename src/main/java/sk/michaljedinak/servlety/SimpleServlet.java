@@ -75,7 +75,8 @@ public class SimpleServlet extends  HttpServlet {
             out.printf("name : %s ",page);
             out.println("<br>");
             for(int i = 0;i<animal.length;i++){
-                  out.printf("%s", animal[i]);
+                  String gap =" ";
+                  out.printf("  %s ", gap + animal[i] + ";\n");                 
             }
 
             out.println("</body></html>");

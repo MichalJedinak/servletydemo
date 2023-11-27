@@ -5,10 +5,45 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Form simple serlvet page</title>
 </head>
-<body>
+<style>
+      html{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+      }
+      body{
+            display: flex;
+            justify-content:center ;
+            align-items: center;
+            flex-direction: column;
+            background: crimson;
+      }
+      #form{
+            align-items: flex-start;
+            font-family: system-ui;
+            font-size: medium;
+            color: darkturquoise;
+      }
+      input{
+            padding: .4rem;
+            padding-bottom: 1.5rem;
+            border-radius: 8px;
+      }
+      #form p{
+            display: inline;
+            margin-bottom: 1.5rem;
+            padding: .3rem;
+      }
+      #form select{
+            padding: .3rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+      }
+</style>
+<body >
       <h2>Post request simpleservlet</h2>
-      <div style="align-items: flex-start; font-family: system-ui;font-size: medium;color: darkturquoise;">
-            <form action="simpleservlet" method="get">
+      <div id="form">
+            <form action="simpleservlet" method="post">
                   <label for="name" >Enter your name</label><br>
                   <input id="name" type="text" name="name" placeholder="name"><br>
                   <label for="surname" >Enter your surname</label><br>
@@ -16,13 +51,15 @@
                   <input id="page" type="hidden" name="page" value="form.html"><br>
 
                   <p>Man :<input type="radio" name="genders" value="man"></p>
-                  <p>Woman :<input type="radio" name="genders" value="woman"></p>
+                  <p>Woman :<input type="radio" name="genders" value="woman"></p><br><br>
                   <select name="country" id="country-select">
                         <option value="">---select your country---</option>
                         <option value="sk">sk</option>
                         <option value="cz">cz</option>
+                        <option value="pl">pl</option>
+                        <option value="hu">hu</option>
                         <option value="en">en</option>
-                  </select>
+                  </select><br>
 
                   <select name="animals" id="animals-select"  multiple="multiple" size="4">
                         <option value="">---select your favorit animals---</option>
@@ -31,7 +68,7 @@
                         <option value="banny">banny</option>
                         <option value="frog">frog</option>
                         <option value="bird">bird</option>
-                  </select>
+                  </select><br>
                   <button type="submit" name="submit">Submit</button>
             </form>
       </div>
